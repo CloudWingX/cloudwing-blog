@@ -8,7 +8,7 @@ export const profileConfig: ProfileConfig = {
 	name: "CloudWing_X",
 
 	// 个人签名
-	bio: "个人博客，设计与代码均为本人产出。",
+	bio: "Learn，Learning，Learned",
 
 	// 链接配置
 	links: [
