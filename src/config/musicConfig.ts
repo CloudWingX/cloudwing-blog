@@ -18,7 +18,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	playMode: "list",
 
 	// 是否显启用歌词
-	showLyrics: false,
+	showLyrics: true,
 
 	// Meting API 配置
 	meting: {
@@ -42,18 +42,39 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 
 	// 本地音乐配置（当 mode 为 'local' 时使用）
 	// 1. 支持传入歌词文件的路径
-	// lrc: "/assets/music/lrc/使一颗心免于哀伤-哼唱.lrc",
+	// lrc: "/assets/music/lrc/into-the-sky.lrc",
 	// 2. 或者直接填入歌词字符串内容
 	// lrc: "[00:00.00]歌词内容...",
 	local: {
-		playlist: [
-			{
-				name: "使一颗心免于哀伤",
-				artist: "知更鸟 / HOYO-MiX / Chevy",
-				url: "/assets/music/使一颗心免于哀伤-哼唱.mp3",
-				cover: "/assets/music/cover/109951169585655912.webp",
-				lrc: "",
-			},
-		],
-	},
+			playlist: [
+				{
+					name: "Evolution Era",
+					artist: "V.K克",
+					url: "/assets/music/evolution-era.mp3",
+					cover: "/assets/music/cover/evolution-era.jpg",
+					lrc: "",
+				},
+				{
+					name: "Into the Sky <MODv>",
+					artist: "SawanoHiroyuki[nZk]",
+					url: "/assets/music/into-the-sky.mp3",
+					cover: "/assets/music/cover/into-the-sky.jpg",
+					lrc: "/assets/music/lrc/into-the-sky.lrc",
+				},
+				{
+					name: "Wings of Piano",
+					artist: "V.K克",
+					url: "/assets/music/wings-of-piano.mp3",
+					cover: "/assets/music/cover/wings-of-piano.jpg",
+					lrc: "",
+				},
+				{
+					name: "星が瞬くこんな夜に",
+					artist: "supercell",
+					url: "/assets/music/starry-night.mp3",
+					cover: "/assets/music/cover/starry-night.jpg",
+					lrc: "/assets/music/lrc/starry-night.lrc",
+				},
+			],
+		},
 };
