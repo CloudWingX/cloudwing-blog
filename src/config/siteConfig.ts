@@ -42,26 +42,26 @@ const pages = resolvePageToggles({
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "云翼",
 
 	// 站点副标题
-	subtitle: "Demo site",
+	subtitle: "记录学习与折腾的过程",
 
 	// 站点 URL
-	site_url: "https://firefly.cuteleaf.cn",
+	site_url: "https://cloudwing.top",
 
 	// 站点描述
 	description:
-		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
+		"CloudWing（云翼）· 记录学习与折腾的过程",
 
 	// 站点关键词
 	keywords: [
-		"Firefly",
-		"Fuwari",
+		"云翼",
+		"CloudWing",
 		"Astro",
-		"ACGN",
+		"前端",
 		"博客",
-		"技术博客",
+		"个人博客",
 		"静态博客",
 	],
 
@@ -90,12 +90,14 @@ export const siteConfig: SiteConfig = {
 	// 如果启用了OpenGraph图片功能，数组中需要包含png格式的favicon图标
 	favicon: [
 		{
-			// 图标文件路径
-			src: "/favicon/firefly-32.png",
-			// 可选，指定主题 'light' | 'dark'
-			// theme: "light",
-			// 可选，图标大小
-			// sizes: "32x32",
+			src: "/favicon/favicon-light-32.png",
+			theme: "light",
+			sizes: "32x32",
+		},
+		{
+			src: "/favicon/favicon-dark-32.png",
+			theme: "dark",
+			sizes: "32x32",
 		},
 	],
 
@@ -112,12 +114,12 @@ export const siteConfig: SiteConfig = {
 		// 使用 Astro 图标库时不需要设置 valueDark，图标会自动跟随主题亮暗色切换
 		logo: {
 			type: "image",
-			value: "assets/images/logo/firefly-light.png",
-			valueDark: "assets/images/logo/firefly-dark.png",
-			alt: "🍀",
+			value: "/brandmark-light.svg",
+			valueDark: "/brandmark-dark.svg",
+			alt: "云翼",
 		},
 		// 导航栏标题
-		title: "Firefly Blog",
+		title: "云翼",
 		// 全宽导航栏，导航栏是否占满屏幕宽度
 		widthFull: false,
 		// 导航菜单对齐方式，left：左对齐，center：居中

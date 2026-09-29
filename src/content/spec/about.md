@@ -1,27 +1,22 @@
-# 关于我 / About Me
+我是 CloudWing_X，计算机科学与技术专业本科生（2027 届）。
+平时写 Java 后端，也做测试——习惯先把问题复现出来，再谈怎么修。
+这里放我的文章、影集和一些学习记录，想到什么写什么。
 
-你好！我是 **夏叶** ，一个在数字世界中默默无闻的一片叶子。
+> 有事可以在互动页留言，或者直接发邮件。
 
-## 🛠️ 关于本站
+## Education & Practice
 
-这个网站使用 **Astro** 框架构建，采用了 [Firefly](https://github.com/CuteLeaf/Firefly) 模板，Firefly 是基于 [Fuwari](https://github.com/saicaca/fuwari) 的二次开发。
+- **2023.09 – 2027.06 ｜ 计算机科学与技术 · 本科（统招）**：主修 Java 程序设计、C 语言、Web 应用开发、数据结构、操作系统、计算机网络、数据库原理、软件工程；大四冲刺阶段系统推进 Java 后端（JavaSE → JavaWeb → Spring Boot），坚持每日编码练习。
+- **2025.07 ｜ 企业实践实训 · Web 系统方向**：随企业导师研读业务文档，梳理功能模块与校验规则；以功能用例走查系统操作路径，兼顾正向流程与异常边界；结合日志与复现步骤协助定位页面/接口问题，并按规范跟进回归验证——完整经历「需求 → 用例 → 执行 → 缺陷 → 回归」闭环。
+- **课程设计 ｜ 简易图书管理系统 · 前后端分离（核心开发）**：Spring Boot · MyBatis · MySQL · Vue · Axios · Git。设计用户/图书/借阅记录表结构与权限隔离；按 Controller → Service → Mapper 分层实现登录鉴权、图书增删改查、借阅归还与分页，统一处理参数校验与异常；前端 Vue + Axios 联调并解决跨域、中文乱码、时间格式等问题，配合测试专项验证与回归修复。
 
-**Firefly** 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。
+## Stack & Cert
 
+- **后端**：Java · Spring Boot · MyBatis · RESTful API · 多线程入门
+- **前端**：HTML/CSS/JavaScript · Vue · Axios
+- **数据与测试**：MySQL（SQL/多表/事务/索引）· 接口测试 · 用例设计 · 缺陷跟进
+- **工具与效率**：Git · Maven · IDEA / VS Code · 文档驱动的 AI 辅助排错
 
-**🖥️在线预览： [Firefly - Demo site](https://firefly.cuteleaf.cn/)**
+语言：大学英语四级（CET-4）通过，可阅读英文技术文档。
 
-**📝Firefly使用文档： [https://docs-firefly.cuteleaf.cn](https://docs-firefly.cuteleaf.cn/)**
-
-**⭐Firefly开源地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)** 
-
-**⭐Fuwari开源地址：[https://github.com/saicaca/fuwari](https://github.com/saicaca/fuwari)**
-
-::github{repo="CuteLeaf/Firefly"}
-
-::github{repo="saicaca/fuwari"}
-
----
-
-*感谢你的来访！希望在这里能找到对你有用的内容！*
-
+个人博客，设计与代码均为本人产出。

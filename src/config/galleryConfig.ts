@@ -4,39 +4,48 @@ import type { GalleryConfig } from "@/types/galleryConfig";
 export const galleryConfig: GalleryConfig = {
 	// 相册列表
 	albums: [
-		// 支持jpg/png/webp/avif/gif格式
-		// id: 相册唯一标识符（用于目录命名和URL路径），比如设置：id: "firefly-2026", 对应 public/gallery/firefly-2026/目录
-		// cover: 手动指定封面图（可选，不填会把cover.*文件作为封面图，如果没有cover.*文件，则使用第一张图片作为封面图）
-		// name: 相册名称
-		// description: 相册描述
-		// location: 相册拍摄地点
-		// date: 相册日期，格式为 YYYY-MM-DD，用于排序和显示
-		// tags: 相册标签，用于分类和过滤
-		// password: 访问密码，设置后需要输入密码才能查看相册内容（可选）
-		// passwordHint: 密码提示，设置后在输入密码错误时显示（可选，需配合password使用）
-		// 每添加一个数组项就相当于添加了一个相册，记得在 public/gallery/ 目录下创建对应的子目录并放入图片
+		// 图片已放入 public/gallery/<id>/ 目录
+		// 以下 5 个相册由旧站「影集」5 个分组迁移而来
 		{
-			id: "firefly-2026",
-			name: "可爱流萤",
-			description: "飞萤之火自无梦的长夜亮起，绽放在终竟的明天。",
-			location: "崩坏：星穹铁道",
-			date: "2026-01-01",
-			tags: ["崩坏星穹铁道", "流萤"],
+			id: "mc",
+			name: "Minecraft",
+			description: "乌托邦探险之旅的游玩截图",
+			location: "Minecraft",
+			date: "2026-08-26",
+			tags: ["影像", "Minecraft"],
 		},
 		{
-			id: "encrypted-test",
-			name: "加密相册示例",
-			description:
-				"这是一个加密相册的示例，设置了访问密码，只有输入正确的密码才能查看相册内容。",
-			location: "崩坏：星穹铁道",
-			date: "2026-02-01",
-			tags: ["加密相册", "示例"],
-			password: "123456",
-			passwordHint: "示例密码123456",
+			id: "ds2",
+			name: "黑暗之魂2",
+			description: "Steam 截图，6 月末的传火之旅",
+			location: "黑暗之魂2",
+			date: "2025-06-29",
+			tags: ["影像", "黑暗之魂2"],
+		},
+		{
+			id: "peak",
+			name: "Peak",
+			description: "游戏截图（1920×1080 全尺寸）",
+			location: "Peak",
+			date: "2026-09-22",
+			tags: ["影像", "Peak"],
+		},
+		{
+			id: "wp",
+			name: "壁纸",
+			description: "收藏壁纸（竖版为主）",
+			date: "2026-09-22",
+			tags: ["影像", "壁纸"],
+		},
+		{
+			id: "ai",
+			name: "AI 生成",
+			description: "AI 生成贴纸",
+			date: "2026-09-11",
+			tags: ["影像", "AI生成"],
 		},
 	],
 
 	// 瀑布流最小列宽(px)，浏览器根据容器宽度自动计算列数，默认 240
-	// 值越小列数越多，值越大列数越少
 	columnWidth: 240,
 };
