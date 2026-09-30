@@ -105,6 +105,12 @@ const PROJECT_STATUS_META: Record<
 			"bg-neutral-200/80 text-neutral-600 dark:bg-neutral-700/60 dark:text-neutral-300",
 		coverClassName: "bg-neutral-500/85 text-white dark:bg-neutral-600/85",
 	},
+	replica: {
+		key: I18nKey.projectStatusReplica,
+		icon: "material-symbols:fork-right",
+		className: "bg-violet-500/15 text-violet-600 dark:text-violet-400",
+		coverClassName: "bg-violet-500/90 text-white dark:bg-violet-600/90",
+	},
 };
 
 // 已知状态 key 列表（供列表页生成筛选按钮）

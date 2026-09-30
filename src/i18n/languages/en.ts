@@ -102,6 +102,7 @@ export const en: Translation = {
 	[Key.projectStatusDeveloping]: "In Development",
 	[Key.projectStatusPublished]: "Published",
 	[Key.projectStatusArchived]: "Archived",
+	[Key.projectStatusReplica]: "Replica",
 	[Key.guestbook]: "Guestbook",
 	[Key.guestbookDescription]:
 		"Welcome to leave your mark here, share your thoughts and suggestions",

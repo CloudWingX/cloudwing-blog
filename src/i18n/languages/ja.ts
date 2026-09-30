@@ -101,6 +101,7 @@ export const ja: Translation = {
 	[Key.projectStatusDeveloping]: "開発中",
 	[Key.projectStatusPublished]: "公開済み",
 	[Key.projectStatusArchived]: "アーカイブ",
+	[Key.projectStatusReplica]: "復刻",
 	[Key.guestbook]: "ゲストブック",
 	[Key.guestbookDescription]:
 		"ここに足跡を残して、あなたの考えや提案を共有してください",

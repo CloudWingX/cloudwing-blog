@@ -133,6 +133,7 @@ enum I18nKey {
 	projectStatusDeveloping = "projectStatusDeveloping",
 	projectStatusPublished = "projectStatusPublished",
 	projectStatusArchived = "projectStatusArchived",
+	projectStatusReplica = "projectStatusReplica",
 
 	// 番组计划筛选和状态文本
 	bangumiTitle = "bangumiTitle",

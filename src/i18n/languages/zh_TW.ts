@@ -100,6 +100,7 @@ export const zh_TW: Translation = {
 	[Key.projectStatusDeveloping]: "開發中",
 	[Key.projectStatusPublished]: "已發佈",
 	[Key.projectStatusArchived]: "已封存",
+	[Key.projectStatusReplica]: "復刻",
 	[Key.guestbook]: "留言",
 	[Key.guestbookDescription]: "歡迎在這裡留下你的足跡，分享你的想法和建議",
 	[Key.untitled]: "無標題",

@@ -101,6 +101,7 @@ export const ko: Translation = {
 	[Key.projectStatusDeveloping]: "개발 중",
 	[Key.projectStatusPublished]: "출시됨",
 	[Key.projectStatusArchived]: "보관됨",
+	[Key.projectStatusReplica]: "복제",
 	[Key.guestbook]: "방명록",
 	[Key.guestbookDescription]:
 		"이곳에 흔적을 남기고 생각과 제안을 공유해 주세요",
