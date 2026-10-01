@@ -54,6 +54,14 @@ type ProjectData = {
 	lang: string;
 };
 
+type DiaryData = {
+	title: string;
+	published: Date;
+	description: string;
+	tags: string[];
+	draft: boolean;
+};
+
 type ContentCollection<T> = CollectionConfig<
 	ZodType<T>,
 	ReturnType<typeof glob>
@@ -130,14 +138,27 @@ const projectsCollection: ContentCollection<ProjectData> = defineCollection({
 	}),
 });
 
+const diaryCollection: ContentCollection<DiaryData> = defineCollection({
+	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/diary" }),
+	schema: z.object({
+		title: z.string(),
+		published: z.date(),
+		description: z.string().optional().default(""),
+		tags: z.array(z.string()).optional().default([]),
+		draft: z.boolean().optional().default(false),
+	}),
+});
+
 export const collections: {
 	dynamic: typeof dynamicCollection;
 	posts: typeof postsCollection;
 	spec: typeof specCollection;
 	projects: typeof projectsCollection;
+	diary: typeof diaryCollection;
 } = {
 	dynamic: dynamicCollection,
 	posts: postsCollection,
 	spec: specCollection,
 	projects: projectsCollection,
+	diary: diaryCollection,
 };

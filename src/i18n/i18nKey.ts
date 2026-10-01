@@ -135,6 +135,12 @@ enum I18nKey {
 	projectStatusArchived = "projectStatusArchived",
 	projectStatusReplica = "projectStatusReplica",
 
+	// 日记页面
+	diary = "diary",
+	diaryDescription = "diaryDescription",
+	diaryBack = "diaryBack",
+	diaryEmpty = "diaryEmpty",
+
 	// 番组计划筛选和状态文本
 	bangumiTitle = "bangumiTitle",
 	bangumiSubtitle = "bangumiSubtitle",

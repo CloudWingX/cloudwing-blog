@@ -1,0 +1,90 @@
+---
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import "@/styles/pages/common.css";
+import { getSortedDiaryPosts } from "@/utils/content-utils";
+import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import { removeFileExtension, url } from "@/utils/url-utils";
+
+// 检查页面是否启用
+if (!siteConfig.pages.diary) {
+	return Astro.redirect("/404/");
+}
+
+const title = i18n(I18nKey.diary);
+const description = i18n(I18nKey.diaryDescription);
+
+const diaries = await getSortedDiaryPosts();
+const items = diaries.map((d) => ({
+	id: removeFileExtension(d.id),
+	title: d.data.title,
+	description: d.data.description,
+	published: d.data.published,
+	tags: d.data.tags,
+}));
+---
+
+<MainGridLayout title={title} description={description}>
+	<section class="page-shell">
+		<header class="card-base page-header">
+			<div class="page-heading">
+				<div class="page-icon" aria-hidden="true">
+					<Icon name="material-symbols:edit-note" />
+				</div>
+				<div>
+					<h2>{title}</h2>
+					{description && <p>{description}</p>}
+				</div>
+			</div>
+			<div class="page-count" aria-label={title}>
+				<Icon name="material-symbols:edit-note" />
+				<strong>{items.length}</strong>
+				<span>{title}</span>
+			</div>
+		</header>
+
+		{
+			items.length > 0 ? (
+				<div class="flex flex-col gap-4">
+					{items.map((item) => (
+						<a
+							href={url(`/diary/${item.id}/`)}
+							class="card-base p-6 block group hover:border-(--primary) transition-colors"
+						>
+							<div class="flex items-center gap-2 text-sm text-30 mb-2">
+								<Icon
+									name="material-symbols:calendar-today-outline-rounded"
+									class="text-base"
+								/>
+								<time datetime={item.published.toISOString()}>
+									{formatDateToYYYYMMDD(item.published)}
+								</time>
+							</div>
+							<h3
+								class="text-lg font-bold text-90 group-hover:text-(--primary) transition-colors"
+							>
+								{item.title}
+							</h3>
+							{item.description && (
+								<p class="mt-1 text-sm text-30 line-clamp-2">
+									{item.description}
+								</p>
+							)}
+						</a>
+					))}
+				</div>
+			) : (
+				<div class="card-base flex flex-col items-center justify-center py-16 text-neutral-400 dark:text-neutral-500">
+					<Icon
+						name="material-symbols:edit-note"
+						class="text-6xl mb-4 opacity-50"
+					/>
+					<p class="text-lg">{i18n(I18nKey.diaryEmpty)}</p>
+				</div>
+			)
+		}
+	</section>
+</MainGridLayout>

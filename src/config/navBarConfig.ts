@@ -33,10 +33,13 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 			// 系列
 			LinkPresets.Series,
+
+			// 日记
+			LinkPresets.Diary,
 		],
 	});
 
-	//社交及其子菜单
+	// 社交及其子菜单
 	links.push({
 		name: "社交",
 		url: "#",
@@ -169,6 +172,12 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		name: "系列",
 		url: "/series/",
 		icon: "material-symbols:layers",
+	},
+	Diary: {
+		name: "日记",
+		url: "/diary/",
+		icon: "material-symbols:edit-note",
+		pageKey: "diary",
 	},
 	Friends: {
 		name: "友链",

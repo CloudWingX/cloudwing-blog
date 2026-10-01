@@ -1,0 +1,97 @@
+---
+import { render } from "astro:content";
+import Markdown from "@components/common/Markdown.astro";
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { getSortedDiaryPosts } from "@/utils/content-utils";
+import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import { removeFileExtension, url } from "@/utils/url-utils";
+
+// 检查页面是否启用
+if (!siteConfig.pages.diary) {
+	return Astro.redirect("/404/");
+}
+
+export async function getStaticPaths() {
+	const diaries = await getSortedDiaryPosts();
+	return diaries.map((entry) => ({
+		params: { slug: removeFileExtension(entry.id) },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+
+const { title, description, published, tags } = entry.data;
+---
+
+<MainGridLayout
+	title={title}
+	description={description || title}
+	setOGTypeArticle={true}
+	headings={headings}
+>
+	<div class="flex w-full rounded-(--radius-large) overflow-hidden relative mb-4">
+		<div
+			id="post-container"
+			class="card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full"
+		>
+			<a
+				href={url("/diary/")}
+				class="inline-flex items-center gap-1.5 text-sm text-(--primary) hover:underline mb-4"
+			>
+				<Icon name="material-symbols:arrow-back" class="text-base" />
+				{i18n(I18nKey.diaryBack)}
+			</a>
+
+			<h1
+				data-pagefind-weight="10"
+				data-pagefind-meta="title"
+				class="text-3xl md:text-[2.25rem]/[2.75rem] font-bold leading-tight text-neutral-900 dark:text-neutral-100 mb-3"
+			>
+				{title}
+			</h1>
+
+			<div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-5">
+				<div class="flex items-center">
+					<div class="meta-icon">
+						<Icon
+							name="material-symbols:calendar-today-outline-rounded"
+							class="text-xl"
+						/>
+					</div>
+					<time datetime={published.toISOString()} class="text-50 text-sm font-medium">
+						{formatDateToYYYYMMDD(published)}
+					</time>
+				</div>
+				{tags.length > 0 && (
+					<div class="flex items-center">
+						<div class="meta-icon">
+							<Icon name="material-symbols:tag-rounded" class="text-xl" />
+						</div>
+						<span class="flex flex-wrap items-center">
+							{tags.map((tag, i) => (
+								<span class="flex items-center">
+									{i !== 0 && (
+										<span class="mx-1.5 text-sm font-medium text-(--meta-divider)">/</span>
+									)}
+									<span class="text-50 text-sm font-medium whitespace-nowrap">{tag}</span>
+								</span>
+							))}
+						</span>
+					</div>
+				)}
+			</div>
+
+			<div data-pagefind-body>
+				<Markdown class="mb-6 markdown-content">
+					<Content />
+				</Markdown>
+			</div>
+		</div>
+	</div>
+</MainGridLayout>

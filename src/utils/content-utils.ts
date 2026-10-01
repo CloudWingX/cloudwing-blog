@@ -83,6 +83,23 @@ export async function getSortedProjects(): Promise<
 }
 
 /**
+ * 获取全部日记并按发布时间倒序（日期相同按标题兜底）
+ */
+export async function getSortedDiaryPosts(): Promise<
+	CollectionEntry<"diary">[]
+> {
+	const allDiaries = await getCollection("diary", ({ data }) => {
+		return import.meta.env.PROD ? data.draft !== true : true;
+	});
+
+	return allDiaries.sort(
+		(a, b) =>
+			b.data.published.getTime() - a.data.published.getTime() ||
+			a.data.title.localeCompare(b.data.title),
+	);
+}
+
+/**
  * 系列内排序：按 seriesOrder 升序，未设置者排最后；再按发布日期降序、标题兜底
  * 注意：判断 seriesOrder 是否设置必须用 !== undefined，否则 0 会被当作「未设置」排到最后
  */

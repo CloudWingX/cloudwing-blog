@@ -102,6 +102,10 @@ export const ja: Translation = {
 	[Key.projectStatusPublished]: "公開済み",
 	[Key.projectStatusArchived]: "アーカイブ",
 	[Key.projectStatusReplica]: "復刻",
+	[Key.diary]: "日記",
+	[Key.diaryDescription]: "日常の記録と随筆",
+	[Key.diaryBack]: "日記一覧に戻る",
+	[Key.diaryEmpty]: "まだ日記がありません",
 	[Key.guestbook]: "ゲストブック",
 	[Key.guestbookDescription]:
 		"ここに足跡を残して、あなたの考えや提案を共有してください",

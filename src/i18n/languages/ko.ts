@@ -102,6 +102,10 @@ export const ko: Translation = {
 	[Key.projectStatusPublished]: "출시됨",
 	[Key.projectStatusArchived]: "보관됨",
 	[Key.projectStatusReplica]: "복제",
+	[Key.diary]: "일기",
+	[Key.diaryDescription]: "일상 기록과 에세이",
+	[Key.diaryBack]: "일기 목록으로 돌아가기",
+	[Key.diaryEmpty]: "아직 일기가 없습니다",
 	[Key.guestbook]: "방명록",
 	[Key.guestbookDescription]:
 		"이곳에 흔적을 남기고 생각과 제안을 공유해 주세요",
